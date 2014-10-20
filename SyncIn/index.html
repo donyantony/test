@@ -1,0 +1,275 @@
+<!--
+ADOBE SYSTEMS INCORPORATED
+ Copyright 2007 Adobe Systems Incorporated
+ All Rights Reserved.
+ 
+NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the 
+terms of the Adobe license agreement accompanying it.  If you have received this file from a 
+source other than Adobe, then your use, modification, or distribution of it requires the prior 
+written permission of Adobe.
+-->
+<html>
+<head>  
+    <title>Download And Print</title>
+
+	<script type="text/javascript" src="AIRAliases.js"></script>
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="SourceViewer/AIRSourceViewer.js"></script>      	
+	<script type="text/javascript" src="PDFSample.js"></script>
+    <script type="text/javascript" src="AIRIntrospector.js"></script>
+	<script>
+		function viewSources(){
+			var sb = air.SourceViewer.getDefault();
+			var cfg = {exclude: ['/SourceViewer']};
+			sb.setup(cfg);
+			sb.viewSource()
+		}		
+		function checkPdf(){
+			if(air.HTMLLoader.pdfCapability!=runtime.flash.html.HTMLPDFCapability.STATUS_OK){
+				alert('This sample requires Adobe Reader 8.1.1!');
+			}
+           air.Introspector.Console.log(this);
+		}
+		
+		
+		checkPdf();
+	</script>
+<style>
+    
+    @font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"), url("https://fonts.gstatic.com/s/lato/v8/1YwB1sO8YE1Lyjf12WNiUA.woff2") format("woff2"), url("https://fonts.gstatic.com/s/lato/v8/9k-RPmcnxYEPm8CNFsH2gg.woff") format("woff");
+}
+body{
+	
+	background: #f4f4f5;
+	color:#85DB18;
+	font-family:Arial;
+	font-size:12px;
+
+}
+#title{
+	
+	background:#373739;
+	border-bottom:3px solid #CF262C;
+	height:60px;
+	padding:10px;
+	color:#FFFFFF;
+
+}
+
+#title > span{
+		display:block;
+		font-weight:bold;
+		font-size:16px;
+	}
+    
+#testcases{
+	
+	border-right:1px solid #eeeeee;
+}
+
+.testcaseList {
+	overflow:hidden;
+}
+
+.testcaseList > .title {
+	display:block;
+	font-size:20px;	
+	padding:2px;
+	color:#ED1C24;
+	padding-left:10px;
+	font-weight:bold;
+}
+
+.testcaseList > ul{
+	list-style-type: none;
+	padding:0px;
+	position:absolute;
+	overflow:auto;	
+	display:block;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	top:125px;
+	margin:0px;
+}
+
+.testcaseList > ul > li{
+	display:block;
+	position:relative;
+	padding:5px;
+	background:#ffffff;
+	color:333333;
+	font-size:12px;
+	left:5px;
+	right:0px;
+	height:20px;
+	margin:0px;
+	-webkit-border-radius:10px;
+}
+
+.testcaseList > ul > li.even{
+	background:#ffffff;
+}
+
+#products.productList > ul{
+	padding:0px 10px 0px 10px;
+}
+
+.testcaseList > ul > li:hover{
+	cursor:pointer;
+	
+}
+    
+.testcaseList> ul > li > .title{
+	position:absolute;
+	left:10px;
+	font-weight:bold;
+}
+.testcaseList > ul > li > .count{
+	position:absolute;
+	display:block;
+	left:100px;
+	width:30px;
+	text-align:right;
+}
+
+.testcaseList > ul > li > .count:after{
+	content: 'x';
+}
+
+.testcaseList > ul > li > .price{
+	position:absolute;
+	display:block;
+	right:10px;
+	text-align:right;
+	font-weight:bold;
+}
+
+.testcaseList > ul#total{
+	top:auto !important;
+	height:70px;
+	bottom:30px !important;
+}
+.testcaseList > ul#total > li{
+	position:absolute;
+	background:#CDE855;
+	border:none;
+	margin:0px!important;
+}
+.testcaseList > ul#total > li > .title{
+	font-weight:bold;
+}
+
+#testcases.testcaseList > ul > li > .primary{
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	-webkit-border-radius:4px;
+}
+
+#testcases.testcaseList > ul > li > .primary:hover{
+	background:#493F0B;
+	color:#F5F6D4;
+}
+#testcases.testcaseList > ul > li{
+	height:100px;
+	margin-bottom:10px;
+}
+
+.testcaseList > ul > li > .description{
+	position:absolute;
+	display:block;
+	left:10px;
+	top:30px;
+	right:10px;
+	bottom:10px;
+	border-top:1px solid #dddddd;
+	overflow:hidden;
+}
+#cart.testcaseList > ul{
+	bottom:100px;
+}
+
+#cart.productList > ul > li {
+	height:60px;
+	margin:2px;
+}
+#cart.testcaseList > ul > li > .remove,
+#cart.testcaseList > ul > li > #checkout{
+	
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	border:1px solid #493F0B;
+	background:#F5F6D4;
+	color:#493F0B;
+	-webkit-border-radius:4px;
+}
+
+#cart.testcaseList > ul > li > .remove:hover,
+#cart.testcaseList > ul > li > #checkout:hover{
+	background:#493F0B;
+	color:#F5F6D4;
+}
+
+input.primary[type="submit"] {
+    background-image: linear-gradient(#DCDCDC, #05A3E3 2px, #157BAA);
+    background-color: #157BAA;
+    color: #FFF;
+    text-shadow: 1px 1px 0px #294E6D;
+    border-color: #0F5B7D;
+}
+button.primary {
+    border: 1px solid #25668A;
+    margin-bottom: 5px;
+    width: initial;
+    border-radius: 4px;
+}
+    
+#aboutBox{
+	position:absolute;
+	right:0px;
+	font-size:10px;
+	bottom:0px;
+	padding:10px;	
+	padding-right:20px;
+}
+
+
+</style>
+
+</head>
+<body onLoad="new PDFSample()">
+<div id="container" >
+<div id="title"> 
+    <span>Lexis Advance <sup>®</sup></span>
+    <div>This is a sample application that demonstrates how to use print and save features using Adobe Air and PDF</div>
+</div>
+<div id="testcases" class="testcaseList"> 
+    <span class="title">Options</span> 
+    <ul id="testcaseList">
+	<li>
+		<span class="title">
+			Product 1
+		</span>
+		<span class="price">			
+			10RON
+		</span>
+		<spon class="description">
+			Lorem ipsum
+		</span>
+	</li>
+    </ul>
+</div>
+<div id="aboutBox">
+	 <a href="#" onClick="viewAbout();">About
+    </a>&nbsp;|&nbsp;
+    <a href="#" onClick="viewSources();">View sources</a> 
+</div>
+</div>
+</body>
+</html>

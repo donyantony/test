@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ADOBE SYSTEMS INCORPORATED
+ Copyright 2007 Adobe Systems Incorporated
+ All Rights Reserved.
+ 
+NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the 
+terms of the Adobe license agreement accompanying it.  If you have received this file from a 
+source other than Adobe, then your use, modification, or distribution of it requires the prior 
+written permission of Adobe.
+-->
+<products>
+	<item>
+		<id>1</id>
+        <name>printairhtml</name>
+		<title>Print using Adobe Air printJob interface- HTML content</title>
+		
+		<description>This example uses Adobe Air Javascript APIs to print. Forces the Print Option window to open up. uses HTML content to print. I haven't found a way to sent the print job silently</description>
+	</item>
+	<item>
+		<id>2</id>
+         <name>printairpdfremote</name>
+		<title>Print using Adobe Air printJob interface- Remote PDF content</title>
+		
+		<description>This example uses Adobe Air Javascript APIs to print. Forces the Print Option window to open up. uses HTML content to print. </description>
+	</item>
+	<item>
+		<id>3</id>
+          <name>printairpdflocal</name>
+		<title>Print using Adobe Air printJob interface- local PDF content </title>
+		
+		<description></description>
+	</item>
+    <item>
+		<id>4</id>
+          <name>printairpdflocaljsinjected</name>
+		<title>Print using Adobe Air printJob interface - local PDF content with JS injected</title>
+		
+		<description>PDF has js code injected in it to print silently. Javascript on the page communicates with the PDF javascript by sending messages.</description>
+	</item>
+    <item>
+		<id>5</id>
+          <name>savepdftofolder</name>
+		<title>Save streamed file to folder</title>
+		
+		<description>Using Adobe Air Javascript APIs</description>
+	</item>
+    <item>
+		<id>6</id>
+          <name>savepdftofoldersilent</name>
+		<title>Save streamed file to folder silently</title>
+		
+		<description>Using Adobe Air Javascript APIs</description>
+	</item>
+	
+
+</products>
